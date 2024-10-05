@@ -2,7 +2,7 @@ package Task1;
 
 import java.util.Random;
 
-public class Task1 {
+public class RandomNumberGenerator {
 
 	public static void main(String[] args) {
 		int min=1;
