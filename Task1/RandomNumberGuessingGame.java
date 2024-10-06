@@ -21,14 +21,6 @@ public class RandomNumberGuessingGame {
 	while(userGuess!=randomNumber) {
 		System.out.println("Enter your guess :");
 		userGuess = scanner.nextInt();
-		
-		if(userGuess<randomNumber) {
-			System.out.println("Too low!,Try again.");
-		}else if(userGuess>randomNumber){
-			System.out.println("Too hing!,Try again");
-		}else {
-			System.out.println("Congratulation! You guessed the correct number :"+randomNumber);
-		}
 	}
 	scanner.close();
 	}
