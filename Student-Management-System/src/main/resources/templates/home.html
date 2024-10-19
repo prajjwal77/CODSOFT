@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h2 class="text-center mt-3">Student Management System</h2>
+
+    <form th:action="@{/searchStudent}" method="get">
+        <input type="text" name="rollNumber" placeholder="Search by Roll Number" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <a href="/showNewStudentForm" class="btn btn-success mb-2">Add New Student</a>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Roll Number</th>
+            <th>Grade</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student : ${listStudents}">
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.rollNumber}"></td>
+            <td th:text="${student.grade}"></td>
+            <td th:text="${student.age}"></td>
+            <td>
+                <a th:href="@{/showFormForUpdate/{id}(id=${student.id})}" class="btn btn-info">Update</a>
+                <a th:href="@{/deleteStudent/{id}(id=${student.id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
