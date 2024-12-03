@@ -1,5 +1,5 @@
 package Task1;
-
+//task 1-----
 import java.util.Random;
 import java.util.Scanner;
 
